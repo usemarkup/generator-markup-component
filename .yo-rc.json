@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Peter Lenagh",
+      "authorEmail": "peter@usemarkup.com",
+      "authorUrl": ""
+    }
+  }
+}
