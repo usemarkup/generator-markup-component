@@ -1,1 +1,1 @@
-export { default } from "./<%= lowercasename %>.jsx";
+export { default } from './<%= lowercasename %>.jsx';

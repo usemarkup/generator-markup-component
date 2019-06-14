@@ -5,10 +5,7 @@ import <%= name %> from './<%= lowercasename %>';
 
 describe('<%= name %>', () => {
     it('should render correctly', () => {
-        const comp = shallow(
-          <<%= name %> />
-        );
+        const comp = shallow(<<%= name %> />);
         expect(toJSON(comp)).toMatchSnapshot();
     });
-
 });

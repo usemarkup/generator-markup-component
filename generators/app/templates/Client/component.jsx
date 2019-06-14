@@ -15,10 +15,8 @@ const contextStyles = {
     <%= name %>: <%= snakeCaseName %>Styles
 };
 <% } else { -%>
-    import defaultScss from './<%= lowercasename %>.module.scss';
-
+import defaultScss from './<%= lowercasename %>.module.scss';
 <% } -%>
-
 
 class <%= name %> extends Component {
     render() {
@@ -26,13 +24,12 @@ class <%= name %> extends Component {
         const { copy, classNames } = this.props;
         return (
             <div className={classNames.block}>
+                {/* your component goes here */}
             </div>
         );
 <% } else { -%>
         return (
-            <MarkupContextProvider
-                styles={contextStyles}
-            >
+            <MarkupContextProvider styles={contextStyles}>
                 <Base<%= name %> base {...this.props} />
             </MarkupContextProvider>
         );
@@ -67,8 +64,7 @@ class <%= name %> extends Component {
 /**
  * DefaultCopy provides fallbacks for the copy function provided by markupContextWrapper
  */
-<%= name %>.defaultCopy = {
-};
+<%= name %>.defaultCopy = {};
 
 const componentName = '<%= namespace %><%= name %>';
 <%if (noBaseComponent) { -%>
@@ -77,9 +73,8 @@ const defaultStyles = defaultScss;
 const defaultStyles = <%= snakeCaseName %>Styles;
 <% } -%>
 
-const Context<%= name %> = markupContextWrapper(
-    componentName,
-    defaultStyles
-)(<%= name %>);
+const Context<%= name %> = markupContextWrapper(componentName, defaultStyles)(
+    <%= name %>
+);
 
 export default Context<%= name %>;

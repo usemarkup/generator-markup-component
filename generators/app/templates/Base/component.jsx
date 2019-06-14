@@ -14,6 +14,7 @@ class <%= name %> extends Component {
         const { copy, classNames } = this.props;
         return (
             <div className={classNames.block}>
+                {/* your component goes here */}
             </div>
         );
     }
@@ -46,16 +47,13 @@ class <%= name %> extends Component {
 /**
  * DefaultCopy provides fallbacks for the copy function provided by markupContextWrapper
  */
-<%= name %>.defaultCopy = {
-};
+<%= name %>.defaultCopy = {};
 
 const componentName = '<%= name %>';
 const defaultStyles = defaultScss;
 
-const Context<%= name %> = markupContextWrapper(
-    componentName,
-    defaultStyles
-)(<%= name %>);
+const Context<%= name %> = markupContextWrapper(componentName, defaultStyles)(
+    <%= name %>
+);
 
 export default Context<%= name %>;
-
